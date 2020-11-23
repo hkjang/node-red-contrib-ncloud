@@ -1,0 +1,39 @@
+
+<script type="text/x-red" data-template-name="ncloud">
+    <div class="form-row">
+        <label for="node-input-basePath"><i class="fa fa-key"></i> basePath </label>
+        <input type="text" id="node-input-basePath" placeholder="basePath">
+    </div>
+    <div class="form-row">
+        <label for="node-input-action"><i class="fa fa-key"></i> action </label>
+        <input type="text" id="node-input-action" placeholder="action">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="ncloud">
+   <p>Request <b>msg.payload (method, basePath, action, actionParams)</b> </p>
+   <p>Simple way to get to ncloud API.</p>
+   <p><a href="https://www.npmjs.com/package/naver-ncloud-apis" target="_new">ref this</a></p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ncloud',{
+        category: 'function',
+        defaults: {
+            basePath: {value:"", required:false},
+            action: {value:"", required:false}
+        },
+        color:"#01db8d",
+        icon: "ncloud.png",
+        align: "left",
+        inputs:1,
+        outputs:1,
+        label: function() {
+            return this.name||"ncloud";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+
+</script>

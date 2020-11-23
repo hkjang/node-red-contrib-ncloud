@@ -1,0 +1,120 @@
+[
+  {
+    "id": "4938cb4e.76a934",
+    "type": "ncloud",
+    "z": "a796e9dc.51d198",
+    "basePath": "/server/v2/",
+    "action": "getZoneList",
+    "x": 610,
+    "y": 80,
+    "wires": [
+      [
+        "b26d373c.ac7f98"
+      ]
+    ]
+  },
+  {
+    "id": "a91b562d.b11578",
+    "type": "inject",
+    "z": "a796e9dc.51d198",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 120,
+    "y": 80,
+    "wires": [
+      [
+        "13bfc7d8.7c7878"
+      ]
+    ]
+  },
+  {
+    "id": "3ffd90a3.998f9",
+    "type": "debug",
+    "z": "a796e9dc.51d198",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 930,
+    "y": 80,
+    "wires": []
+  },
+  {
+    "id": "13bfc7d8.7c7878",
+    "type": "function",
+    "z": "a796e9dc.51d198",
+    "name": "",
+    "func": "msg.method = 'GET';\nmsg.basePath = '/server/v2/';\nmsg.action = 'getZoneList';\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 280,
+    "y": 80,
+    "wires": [
+      [
+        "8eda0a6b.e3b618"
+      ]
+    ]
+  },
+  {
+    "id": "b26d373c.ac7f98",
+    "type": "function",
+    "z": "a796e9dc.51d198",
+    "name": "",
+    "func": "\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 760,
+    "y": 80,
+    "wires": [
+      [
+        "3ffd90a3.998f9"
+      ]
+    ]
+  },
+  {
+    "id": "8eda0a6b.e3b618",
+    "type": "delay",
+    "z": "a796e9dc.51d198",
+    "name": "",
+    "pauseType": "rate",
+    "timeout": "5",
+    "timeoutUnits": "seconds",
+    "rate": "30",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 460,
+    "y": 80,
+    "wires": [
+      [
+        "4938cb4e.76a934"
+      ]
+    ]
+  }
+]

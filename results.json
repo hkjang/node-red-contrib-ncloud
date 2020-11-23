@@ -1,0 +1,21 @@
+{
+  "requestId": "778a2e17-be31-488a-8bb7-038dc3b5232b",
+  "returnCode": "0",
+  "returnMessage": "success",
+  "zoneList": [
+    {
+      "zoneNo": "3",
+      "zoneName": "KR-2",
+      "zoneCode": "KR-2",
+      "zoneDescription": "평촌 zone",
+      "regionNo": "1"
+    },
+    {
+      "zoneNo": "2",
+      "zoneName": "KR-1",
+      "zoneCode": "KR-1",
+      "zoneDescription": "가산 zone",
+      "regionNo": "1"
+    }
+  ]
+}
