@@ -5,17 +5,20 @@ module.exports = function(RED) {
     function ncloudOut(n) {
         RED.nodes.createNode(this,n);
         var self = this;
+        this.apigw = n.apigw || "";
         this.method = n.method || "";
         this.basePath = n.basePath || "";
         this.action = n.action || "";
         this.actionParams = n.actionParams || "";
         this.on('input', function (msg) {
+            const apigw = self.apigw || msg.apigw;
             const method = self.method || msg.method;
             const basePath = self.basePath || msg.basePath;
             const action = self.action || msg.action;
             const actionParams = self.actionParams || msg.actionParams;
 
             ncloud({
+                apigw: apigw,
                 method: method,
                 basePath: basePath, //'/server/v2/'
                 action: action, //'getServerInstanceList'
