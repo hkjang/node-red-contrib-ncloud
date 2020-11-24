@@ -1,17 +1,21 @@
 
 <script type="text/x-red" data-template-name="ncloud">
     <div class="form-row">
-        <label for="node-input-basePath"><i class="fa fa-key"></i> basePath </label>
+        <label for="node-input-apigw"><i class="fa"></i> apigw </label>
+        <input type="text" id="node-input-apigw" placeholder="apigw">
+    </div>
+    <div class="form-row">
+        <label for="node-input-basePath"><i class="fa"></i> basePath </label>
         <input type="text" id="node-input-basePath" placeholder="basePath">
     </div>
     <div class="form-row">
-        <label for="node-input-action"><i class="fa fa-key"></i> action </label>
+        <label for="node-input-action"><i class="fa"></i> action </label>
         <input type="text" id="node-input-action" placeholder="action">
     </div>
 </script>
 
 <script type="text/x-red" data-help-name="ncloud">
-   <p>Request <b>msg.payload (method, basePath, action, actionParams)</b> </p>
+   <p>Request <b>msg.payload (apigw, method, basePath, action, actionParams)</b> </p>
    <p>Simple way to get to ncloud API.</p>
    <p><a href="https://www.npmjs.com/package/naver-ncloud-apis" target="_new">ref this</a></p>
 </script>
@@ -20,6 +24,7 @@
     RED.nodes.registerType('ncloud',{
         category: 'function',
         defaults: {
+            apigw: {value:"", required:false},
             basePath: {value:"", required:false},
             action: {value:"", required:false}
         },

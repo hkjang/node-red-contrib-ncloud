@@ -39,6 +39,14 @@ Usage
 <i><a href="https://www.npmjs.com/package/naver-ncloud-apis" target="_new">ncloud</a></i> api request node.
 
 
+### apigw 
+- ncloud, sens, cloudfunctions, ncr, nks, kms, pca, securitymonitoring, 
+wsc, billingapi, livestation, sitesafer, certificatemanager, cloudactivitytracer, 
+resourcemanager, sts, subaccount, wms, cw, naveropenapi, geolocation, apigateway, 
+mail, cloudloganalytics, cloudsearch, vpcelasticsearch, clouddatastreamingservice, 
+das, livestation, vodstation, vodtranscoder, workplaceg, workplacej, workplace, workbox, 
+cloudiotcore,,,, and so on.. 
+
 ### method 
 - GET, POST, PUT, DELETE 
 
@@ -50,6 +58,26 @@ Usage
 
 ### actionParams 
 - need actionParams
+
+## request parameter sample 
+```javascript
+msg.apigw = 'ncloud';
+msg.method = 'GET';
+msg.basePath = '/server/v2/';
+msg.action = 'getServerInstanceList';
+
+msg.apigw = 'ncloud';
+msg.method = 'GET';
+msg.basePath = '/server/v2/';
+msg.action = 'getServerProductList';
+msg.actionParams = {};
+
+msg.apigw = 'billingapi';
+msg.method = 'GET';
+msg.basePath = '/billing/v1/cost/';
+msg.action = 'getContractSummaryList';
+msg.actionParams = {"contractMonth" : "202011"};
+```
 
 ## sample flow
 
